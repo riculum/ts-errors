@@ -1,4 +1,7 @@
-type ErrorMetadata = Record<string, string | number | boolean | null | undefined>;
+type JsonValue = string | number | boolean | null | {
+    [key: string]: JsonValue;
+} | JsonValue[];
+type ErrorMetadata = Record<string, JsonValue>;
 type HttpErrorPayload = {
     name: string;
     message: string;
@@ -419,4 +422,4 @@ declare class VariantAlsoNegotiatesError extends HttpError {
     constructor(message?: string, metadata?: ErrorMetadata);
 }
 
-export { BadGatewayError, BadRequestError, ConflictError, type ErrorMetadata, ExpectationFailedError, ForbiddenError, GatewayTimeoutError, GoneError, HTTPVersionNotSupportedError, HttpError, type HttpErrorPayload, ImATeapotError, InsufficientStorageError, InternalServerError, LengthRequiredError, LoopDetectedError, MethodNotAllowedError, NetworkAuthenticationRequiredError, NotAcceptableError, NotExtendedError, NotFoundError, NotImplementedError, PayloadTooLargeError, PaymentRequiredError, PreconditionFailedError, PreconditionRequiredError, ProxyAuthenticationRequiredError, RangeNotSatisfiableError, RequestHeaderFieldsTooLargeError, RequestTimeoutError, TooEarlyError, TooManyRequestsError, URITooLongError, UnauthorizedError, UnavailableForLegalReasonsError, UnprocessableEntityError, UnsupportedMediaTypeError, UpgradeRequiredError, VariantAlsoNegotiatesError };
+export { BadGatewayError, BadRequestError, ConflictError, type ErrorMetadata, ExpectationFailedError, ForbiddenError, GatewayTimeoutError, GoneError, HTTPVersionNotSupportedError, HttpError, type HttpErrorPayload, ImATeapotError, InsufficientStorageError, InternalServerError, type JsonValue, LengthRequiredError, LoopDetectedError, MethodNotAllowedError, NetworkAuthenticationRequiredError, NotAcceptableError, NotExtendedError, NotFoundError, NotImplementedError, PayloadTooLargeError, PaymentRequiredError, PreconditionFailedError, PreconditionRequiredError, ProxyAuthenticationRequiredError, RangeNotSatisfiableError, RequestHeaderFieldsTooLargeError, RequestTimeoutError, TooEarlyError, TooManyRequestsError, URITooLongError, UnauthorizedError, UnavailableForLegalReasonsError, UnprocessableEntityError, UnsupportedMediaTypeError, UpgradeRequiredError, VariantAlsoNegotiatesError };

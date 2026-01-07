@@ -1,6 +1,6 @@
 {
   "name": "@riculum/ts-errors",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Type-safe HTTP error classes for TypeScript projects.",
   "type": "module",
   "main": "./dist/index.cjs",
